@@ -38,7 +38,9 @@ class MyParserCallback extends HTMLEditorKit.ParserCallback {
 	}
 	
 	public void handleText(char[] data, int pos) {
-		if (pos >= 35166 && pos <= 35862)
+		//System.out.println("Stampo la posizione " + pos);
+		//System.out.println(new String(data));
+		if (pos >= 40735 && pos <= 45349)
 			sb.append(data);
 	}
 
