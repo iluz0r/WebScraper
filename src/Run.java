@@ -22,9 +22,10 @@ public class Run {
 			HTMLEditorKit.ParserCallback callback = new MyParserCallback(sb);
 			delegator.parse(in, callback, false);
 
+			System.out.println(
+					"****** Preparazione calamari ripieni di couscous, ottenuta da http://ricette.giallozafferano.it/Calamari-ripieni-di-couscous.html ******\n");
 			System.out.println(sb);
 		}
-
 	}
 
 }
