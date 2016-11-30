@@ -16,12 +16,12 @@ public class Run {
 
 		if (status >= 200 && status <= 299) {
 			InputStreamReader in = new InputStreamReader(conn.getInputStream(), "UTF-8");
-			
+
 			StringBuilder sb = new StringBuilder();
 			ParserDelegator delegator = new ParserDelegator();
 			HTMLEditorKit.ParserCallback callback = new MyParserCallback(sb);
 			delegator.parse(in, callback, false);
-			
+
 			System.out.println(sb);
 		}
 
@@ -32,14 +32,14 @@ public class Run {
 class MyParserCallback extends HTMLEditorKit.ParserCallback {
 
 	private StringBuilder sb;
-	
+
 	public MyParserCallback(StringBuilder sb) {
 		this.sb = sb;
 	}
-	
+
 	public void handleText(char[] data, int pos) {
-		//System.out.println("Stampo la posizione " + pos);
-		//System.out.println(new String(data));
+		// System.out.println("Stampo la posizione " + pos);
+		// System.out.println(new String(data));
 		if (pos >= 40735 && pos <= 45349)
 			sb.append(data);
 	}
